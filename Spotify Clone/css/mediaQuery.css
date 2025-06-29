@@ -1,0 +1,168 @@
+@media (min-width: 1300px) {
+    .song_name {
+        font-size: 22px;
+    }
+}
+
+
+
+
+@media (max-width: 1300px) {
+    .left {
+        position: absolute;
+        z-index: 1;
+        left: -100%;
+        height: calc(100%);
+        width: 300px;
+        padding-right: 10px;
+        border-radius: 0;
+    }
+
+    .left_close {
+        display: block;
+    }
+
+    .upper_half_section {
+        height: 200px;
+    }
+
+    .lower_half {
+        height: calc(100% - 250px);
+    }
+
+    .right {
+        width: 100%;
+    }
+
+    nav .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger_slide_to_right {
+        margin-left: 280px;
+    }
+
+    .song_name {
+        font-size: 20px;
+    }
+
+}
+
+
+
+
+
+
+@media (max-width: 1000px) {
+    .cards_container {
+        padding: 10px 20px;
+        width: 90%;
+    }
+
+}
+
+
+
+
+@media (max-width: 500px) {
+
+    .container {
+        height: 100vh;
+        padding: 0;
+    }
+
+    .left {
+        position: absolute;
+        z-index: 1;
+        left: -10px;
+        height: calc(100%);
+        width: 300px;
+        padding: 0 10px;
+    }
+
+    .upper_half_section,
+    .lower_half {
+        border-radius: 0;
+        background-color: #0f0f0f;
+    }
+
+    .lower_half {
+        height: calc(100% - 220px);
+    }
+
+    .right {
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .cards_container {
+        padding: 10px;
+        width: auto;
+        height: 55%;
+        flex-flow: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 20px 20px;
+        box-sizing: border-box;
+    }
+
+    .card .img_container {
+        width: 100%;
+        height: unset;
+    }
+
+    .card .img_container .song_cover_img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .playbar_buttons {
+        position: unset;
+        transform: translate(0)
+    }
+
+    .playbar_details {
+        flex-flow: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .seekbar {
+        width: 85%;
+    }
+
+    .song_name {
+        width: auto;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .song_time_and_volume {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .song_name,
+    .song_duration {
+        font-size: 16px;
+    }
+
+    .volume img {
+        height: 22px;
+        width: 22px;
+    }
+
+    .volume input {
+        width: 100px;
+    }
+
+}

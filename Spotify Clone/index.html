@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utlity.css">
+    <link rel="stylesheet" href="css/mediaQuery.css">
+    <title>Spotify - Web Player: Music for everyone</title>
+</head>
+
+<body>
+    <div class="container flex">
+        <div class="left ">
+            <div class="upper_half_section">
+                <img src="/svgs/close.svg" class="left_close" alt="">
+                <ul>
+                    <li><img class="logo" src="svgs/logo.svg" alt="Spotify"></li>
+                    <li><img src="svgs/home.svg" alt=""> Home</li>
+                    <li><img src="svgs/search.svg" alt="">search</li>
+                </ul>
+            </div>
+            <div class="lower_half">
+                <div class="library flex align-item">
+                    <img src="svgs/library.svg" alt="">
+                    <h2> Your Library</h2>
+                </div>
+                <div class="songs_list"> </div>
+
+                <div class="footer">
+                    <div>
+                        <a href="https://www.spotify.com/in-en/legal/">Legal</a>
+                    </div>
+                    <div>
+                        <a href="https://www.spotify.com/in-en/safetyandprivacy/">Safety &amp; Privacy Center</a>
+                    </div>
+                    <div>
+                        <a href="https://www.spotify.com/in-en/legal/privacy-policy/">Privacy Policy</a>
+                    </div>
+                    <div>
+                        <a href="https://www.spotify.com/in-en/legal/cookies-policy/">Cookies</a>
+                    </div>
+                    <div>
+                        <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3">About Ads</a>
+                    </div>
+                    <div>
+                        <a href="https://www.spotify.com/in-en/accessibility/">Accessibility</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="right ">
+            <nav class="flex align-item">
+                <div class="arrow_continer flex">
+                    <img src="svgs/hamburger.svg" class="hamburger" alt="">
+                    <img src="svgs/left.svg" alt="&lt">
+                    <img src="svgs/right.svg" alt="&gt">
+                </div>
+
+                <div class="buttons flex align-item">
+                    <button class="signup">Sign Up</button>
+                    <button class="login">Log in</button>
+                </div>
+            </nav>
+
+            <div class="spotify_playlist">
+                <h2>Spotify Playlists</h2>
+            </div>
+
+            <div class="cards_container">
+                
+                
+            </div>
+
+            <div class="playbar_container">
+                <div class="playbar">
+                    <div class="playbar_details">
+                        <div class="song_name"></div>
+                        <div class="playbar_buttons">
+                            <img height="34" src="svgs/previous.svg" id="previous_song_btn" class="previous_song"
+                                alt="">
+                            <img height="34" src="svgs/play.svg" id="play_song_btn" class="play_song" alt="">
+                            <img height="34" src="svgs/next.svg" id="next_song_btn" class="next_song" alt="">
+                        </div>
+                        <div class="song_time_and_volume">
+                            <div class="song_duration"></div>
+                            <div class="volume">
+                                <img class="volume_img" src="svgs/volume-low.svg" alt="">
+                                <input type="range" name="volume" id="volume">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="seekbar">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/mediaQuery.js"></script>
+</body>
+
+</html>
