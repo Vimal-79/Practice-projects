@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twiter</title>
+    <link rel="icon" type="image/jpg" href="favicon.ico">
+    <link rel="stylesheet" href="src/output.css">
+</head>
+
+<body class="bg-black" style="font-family: Franklin Gothic;">
+    <div class="main ">
+
+        <div class=" flex text-white justify-center">
+
+            <!-- Left side of the page -->
+            <div
+                class="left flex flex-col h-[95vh] select-none text-2xl font-normal px-2 py-3 max-[680px]:absolute max-[680px]:left-[-100px] sticky top-0">
+                <div class="icons flex flex-col h-[100%] items-center">
+                    <ul class="list-inside h-[85%] flex flex-col justify-evenly">
+                        <li class="flex gap-4 p-3 cursor-pointer   hover:bg-neutral-900 w-fit rounded-4xl "> <img
+                                class="w-8 invert" src="svgs/logo.svg" alt=""></li>
+                        <li class="flex gap-4 p-2 pl-3 xl:pr-8 cursor-pointer hover:bg-neutral-900 w-fit rounded-4xl">
+                            <img class="w-7 invert" src="svgs/home.svg" alt=""><span
+                                class="xl:inline hidden">Home</span>
+                        </li>
+                        <li class="flex gap-4 p-2 pl-3 xl:pr-8 cursor-pointer hover:bg-neutral-900 w-fit rounded-4xl">
+                            <img class="w-7 invert" src="svgs/search.svg" alt=""><span
+                                class="xl:inline hidden">Explore</span>
+                        </li>
+                        <li class="flex gap-4 p-2 pl-3 xl:pr-8 cursor-pointer hover:bg-neutral-900 w-fit rounded-4xl">
+                            <img class="w-7 invert" src="svgs/notification.svg" alt=""><span
+                                class="xl:inline hidden">Notification</span>
+                        </li>
+                        <li class="flex gap-4 p-2 pl-3 xl:pr-8 cursor-pointer hover:bg-neutral-900 w-fit rounded-4xl">
+                            <img class="w-7 invert" src="svgs/message.svg" alt=""><span
+                                class="xl:inline hidden">Messages</span>
+                        </li>
+                        <li class="flex gap-4 p-2 pl-3 xl:pr-8 cursor-pointer hover:bg-neutral-900 w-fit rounded-4xl">
+                            <img class="w-7 invert" src="svgs/grok.svg" alt=""><span
+                                class="xl:inline hidden">Grok</span>
+                        </li>
+                        <li class="flex gap-4 p-2 pl-3 xl:pr-8 cursor-pointer hover:bg-neutral-900 w-fit rounded-4xl">
+                            <img class="w-7 invert" src="svgs/communities.svg" alt=""><span
+                                class="xl:inline hidden">Cummunites</span>
+                        </li>
+                        <li class="flex gap-4 p-2 pl-3 xl:pr-8 cursor-pointer hover:bg-neutral-900 w-fit rounded-4xl">
+                            <img class="w-7 invert" src="svgs/logo.svg" alt=""><span
+                                class="xl:inline hidden">Premium</span>
+                        </li>
+                        <li class="flex gap-4 p-2 pl-3 xl:pr-8 cursor-pointer hover:bg-neutral-900 w-fit rounded-4xl">
+                            <img class="w-7 invert" src="svgs/verfy.svg" alt=""><span class="xl:inline hidden">Verified
+                                Orgs</span>
+                        </li>
+                        <li class="flex gap-4 p-2 pl-3 xl:pr-8 cursor-pointer hover:bg-neutral-900 w-fit rounded-4xl">
+                            <img class="w-7 invert" src="svgs/profile.svg" alt=""><span
+                                class="xl:inline hidden">Profile</span>
+                        </li>
+                        <li class="flex gap-4 p-2 pl-3 xl:pr-8 cursor-pointer hover:bg-neutral-900 w-fit rounded-4xl">
+                            <img class="w-7 invert" src="svgs/more.svg" alt=""><span
+                                class="xl:inline hidden">More</span>
+                        </li>
+                        <button
+                            class="bg-white p-3 mt-2 text-center rounded-3xl text-xl ml-1 w-fit xl:w-55 cursor-pointer font-semibold text-gray-900"><span
+                                class="hidden xl:inline ">Post</span> <span class="inline xl:hidden"> <svg
+                                    viewBox="0 0 24 24" aria-hidden="true" class="w-5" style="color: rgb(15, 20, 25);">
+                                    <g>
+                                        <path
+                                            d="M23 3c-6.62-.1-10.38 2.421-13.05 6.03C7.29 12.61 6 17.331 6 22h2c0-1.007.07-2.012.19-3H12c4.1 0 7.48-3.082 7.94-7.054C22.79 10.147 23.17 6.359 23 3zm-7 8h-1.5v2H16c.63-.016 1.2-.08 1.72-.188C16.95 15.24 14.68 17 12 17H8.55c.57-2.512 1.57-4.851 3-6.78 2.16-2.912 5.29-4.911 9.45-5.187C20.95 8.079 19.9 11 16 11zM4 9V6H1V4h3V1h2v3h3v2H6v3H4z">
+                                        </path>
+                                    </g>
+                                </svg></span></button>
+                    </ul>
+                    <div
+                        class="profile_container xl:w-60 p-3 mt-8 rounded-full flex justify-between items-center cursor-pointer hover:bg-neutral-900">
+                        <div class="profile_sections flex gap-2">
+                            <div class="img_container w-10 rounded-full overflow-hidden">
+                                <img class="w-full"
+                                    src="https://pbs.twimg.com/profile_images/1895322481441021957/DfJK57Kc_400x400.jpg"
+                                    alt="">
+                            </div>
+                            <div class="profile_details hidden xl:block">
+                                <h3 class="text-sm flex gap-1 items-center ">Vimal Kumar<img class="invert w-5"
+                                        src="svgs/lock.svg" alt="">
+                                </h3>
+                                <p class="text-sm font-normal text-neutral-700">@Vimal_764 </p>
+                            </div>
+                        </div>
+                        <div class="profile_options hidden  xl:block">
+                            <img class="invert w-5" src="svgs/moreOptions.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle part of the page -->
+
+            <div
+                class="middle w-150 border-[1px] max-sm:w-[100vw] max-sm:border-x-0 border-gray-600 border-t-0 border-b-0 relative max-sm:mb-10 max-sm:text-[10px]">
+
+                <div class="backdrop-blur-[10px]">
+                    <div class=" top py-4 px-4 flex items-center justify-between min-[680px]:hidden">
+                        <div class="img w-10 h-10 overflow-hidden rounded-full">
+                            <img src="https://pbs.twimg.com/profile_images/1895322481441021957/DfJK57Kc_400x400.jpg"
+                                alt="">
+                        </div>
+                        <div class="invert w-10 ml-8">
+                            <img src="svgs/logo.svg" alt="">
+                        </div>
+                        <div>
+                            <button
+                                class=" text-white px-4 py-1 rounded-3xl border-1 border-gray-600 shadow-white">upgrade</button>
+                        </div>
+                    </div>
+                    <div class="top flex justify-around border-b-1 border-gray-600 sm:sticky top-0 z-10 ">
+                        <h3
+                            class="w-full text-center font-bold cursor-pointer p-4 opacity-40 hover:backdrop-opacity-100 hover:bg-neutral-800">
+                            For you</h3>
+                        <h3
+                            class="w-full text-center font-bold cursor-pointer p-4 opacity-40 hover:backdrop-opacity-100 hover:bg-neutral-800">
+                            Following</h3>
+                        <h3
+                            class="w-full text-center font-bold cursor-pointer p-4 opacity-40 hover:backdrop-opacity-100 hover:bg-neutral-800">
+                            EduCreators</h3>
+                    </div>
+                </div>
+
+                <div class="mypost border-b-1 border-gray-600  flex gap-3 p-3 max-sm:hidden">
+                    <div class="img w-10 h-9 mt-2 rounded-4xl overflow-hidden">
+                        <img class="object-cover "
+                            src="https://pbs.twimg.com/profile_images/1895322481441021957/DfJK57Kc_400x400.jpg" alt="">
+                    </div>
+                    <div class="txt flex flex-col gap-3 pl-2 pr-5 w-full ">
+                        <div class="selecttion">
+                            <select name="" id="" class="outline-1 px-2 py-0.5 rounded-2xl text-blue-400 font-bold">
+                                <option value="Everyone" Selected>Everyone</option>
+                            </select>
+                        </div>
+                        <div class="font-light text-2xl mt-2">
+                            <input class="outline-0 text-white w-[100%] placeholder:text-neutral-800" type="text"
+                                placeholder="What's happening?">
+                        </div>
+                        <div
+                            class="text-blue-400 font-bold flex gap-1 px-2 w-fit rounded-2xl cursor-pointer hover:bg-blue-950">
+                            <svg class="w-4" viewBox="0 0 24 24" aria-hidden="true" fill="rgb(29, 155, 240)">
+                                <g>
+                                    <path
+                                        d="M12 1.75C6.34 1.75 1.75 6.34 1.75 12S6.34 22.25 12 22.25 22.25 17.66 22.25 12 17.66 1.75 12 1.75zm-.25 10.48L10.5 17.5l-2-1.5v-3.5L7.5 9 5.03 7.59c1.42-2.24 3.89-3.75 6.72-3.84L11 6l-2 .5L8.5 9l5 1.5-1.75 1.73zM17 14v-3l-1.5-3 2.88-1.23c1.17 1.42 1.87 3.24 1.87 5.23 0 1.3-.3 2.52-.83 3.61L17 14z">
+                                    </path>
+                                </g>
+                            </svg>
+                            <p>Everyone can reply</p>
+                        </div>
+                        <div class=" w-[100%] border-t-1 border-gray-600"></div>
+                        <div class="toos_container flex justify-between">
+                            <div class="tools flex">
+                                <img class="w-9 h-9 p-2 box-border rounded-full cursor-pointer hover:bg-blue-950"
+                                    src="svgs/image.svg" alt="">
+                                <img class="w-9 h-9 p-2 box-border rounded-full cursor-pointer hover:bg-blue-950"
+                                    src="svgs/gif.svg" alt="">
+                                <img class="w-9 h-9 p-2 box-border rounded-full cursor-pointer hover:bg-blue-950"
+                                    src="svgs/grok2.svg" alt="">
+                                <img class="w-9 h-9 p-2 box-border rounded-full cursor-pointer hover:bg-blue-950"
+                                    src="svgs/edit.svg" alt="">
+                                <img class="w-9 h-9 p-2 box-border rounded-full cursor-pointer hover:bg-blue-950"
+                                    src="svgs/emojy.svg" alt="">
+                                <img class="w-9 h-9 p-2 box-border rounded-full cursor-pointer hover:bg-blue-950"
+                                    src="svgs/calender.svg" alt="">
+                                <img class="w-9 h-9 p-2 box-border rounded-full cursor-pointer hover:bg-blue-950"
+                                    src="svgs/map.svg" alt="">
+                            </div>
+                            <div class="btn"><button
+                                    class="bg-gray-500 text-black px-5 py-1 font-bold text-[18px] rounded-3xl">Post</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- there are post   -->
+
+                <div class="post cursor-pointer flex p-3 border-1 border-neutral-600  gap-1 hover:bg-neutral-900">
+                    <div class="left">
+                        <div class="img w-10 h-10 rounded-4xl overflow-hidden">
+                            <img class="object-cover"
+                                src="https://pbs.twimg.com/profile_images/1905701269542739968/S9Xh0GYP_400x400.jpg"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="right flex flex-col gap-2 py-0">
+                        <div class="top flex justify-between items-baseline">
+                            <div class="id_username">
+                                <div class="name flex">
+                                    <h2 class="flex hover:underline items-center"><img class="w-5 max-sm:w-3"
+                                            src="https://abs-0.twimg.com/emoji/v2/svg/26a1.svg" alt=""> JNS <img
+                                            class="w-5 max-sm:w-3" src="https://abs-0.twimg.com/emoji/v2/svg/26a1.svg"
+                                            alt="">
+                                        <span class="font-thin"> X </span> <img class="w-5 max-sm:w-3"
+                                            src="https://abs-0.twimg.com/emoji/v2/svg/1fa96.svg" alt="">
+                                    </h2>
+                                    <h2><span class="font-extralight text-gray-400 "> @_devJNS <b> . </b> <span
+                                                class="hover:underline">7h</span></span></h2>
+
+                                </div>
+                                <h2>Whick learning platform is best?</h2>
+                            </div>
+                            <div class="options flex gap-2">
+                                <img class="invert w-5" src="svgs/grok.svg" alt="">
+                                <img class="invert w-5" src="svgs/moreOptions.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="mid border-1 border-neutral-600 rounded-2xl overflow-hidden mb-1">
+                            <img src="https://pbs.twimg.com/media/GuHV5GWWQAAIhkd?format=jpg&name=small" alt="">
+
+                        </div>
+                        <div class="foot flex justify-between items-center px-1">
+                            <div class="flex gap-1 items-center text-neutral-600 text-[15px]">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z">
+                                            </path>
+                                        </g>
+                                    </svg> </div>
+                                <div class="max-sm:text-[12px]">218</div>
+                            </div>
+                            <div class="flex gap-1 items-center text-neutral-600 text-[15px]">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z">
+                                            </path>
+                                        </g>
+                                    </svg></div>
+                                <div class="max-sm:text-[12px]">56</div>
+                            </div>
+                            <div class="flex gap-1 items-center text-neutral-600 text-[15px]">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z">
+                                            </path>
+                                        </g>
+                                    </svg></div>
+                                <div class="max-sm:text-[12px]">662</div>
+                            </div>
+                            <div class="flex gap-1 items-center text-neutral-600 text-[15px]">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z">
+                                            </path>
+                                        </g>
+                                    </svg> </div>
+                                <div class="max-sm:text-[12px]">32K</div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M4 4.5C4 3.12 5.119 2 6.5 2h11C18.881 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71V4.5zM6.5 4c-.276 0-.5.22-.5.5v14.56l6-4.29 6 4.29V4.5c0-.28-.224-.5-.5-.5h-11z">
+                                            </path>
+                                        </g>
+                                    </svg></div>
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z">
+                                            </path>
+                                        </g>
+                                    </svg></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="post cursor-pointer w-[100%] flex p-3 border-1 border-neutral-600  gap-1 hover:bg-neutral-900">
+                    <div class="left">
+                        <div class="img w-10 h-10 rounded-4xl overflow-hidden">
+                            <img class="object-cover"
+                                src="https://pbs.twimg.com/profile_images/1791217922720813057/QIdQpzBA_400x400.jpg"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="right w-[100%] flex flex-col gap-2 px-2 text-neutral-300">
+                        <div class="top flex justify-between items-baseline">
+                            <div class="id_username">
+                                <div class="name flex gap-1">
+                                    <h2 class="flex hover:underline items-center">Clifton Sellers <svg
+                                            viewBox="0 0 22 22" aria-hidden="true" class="w-5 mx-1 fill-blue-500"
+                                            data-testid="verificationBadge">
+                                            <g>
+                                                <path
+                                                    d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z">
+                                                </path>
+                                            </g>
+                                        </svg> <img class="w-4 h-4" draggable="false"
+                                            src="https://pbs.twimg.com/profile_images/1791265195936907264/WN_6jvuD_bigger.jpg">
+                                    </h2>
+                                    <p class="font-light text-neutral-600"> @LegacyBuilder__<b class="font-bold"> .
+                                        </b><span> jan 23 </span></p>
+                                </div>
+                                <h2>If you are under 10,000 followers.</h2>
+                            </div>
+                            <div class="options flex gap-2">
+                                <img class="invert w-5" src="svgs/grok.svg" alt="">
+                                <img class="invert w-5" src="svgs/moreOptions.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="mid  mb-1">
+                            <h2 class="mt-5 ">Leave a comment.</h2>
+                            <h2 class="mt-5 ">I was there not long ago.</h2>
+                            <h2 class="mt-5 ">Promise it's worth the grind.</h2>
+                            <h2 class="mt-5 ">Keep going.</h2>
+
+                        </div>
+                        <div class="foot flex justify-between items-center px-1">
+                            <div class="flex gap-1 items-center text-neutral-600 text-[15px]">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z">
+                                            </path>
+                                        </g>
+                                    </svg> </div>
+                                <div class="max-sm:text-[12px]">921</div>
+                            </div>
+                            <div class="flex gap-1 items-center text-neutral-600 text-[15px]">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z">
+                                            </path>
+                                        </g>
+                                    </svg></div>
+                                <div class="max-sm:text-[12px]">11</div>
+                            </div>
+                            <div class="flex gap-1 items-center text-neutral-600 text-[15px]">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z">
+                                            </path>
+                                        </g>
+                                    </svg></div>
+                                <div class="max-sm:text-[12px]">917</div>
+                            </div>
+                            <div class="flex gap-1 items-center text-neutral-600 text-[15px]">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z">
+                                            </path>
+                                        </g>
+                                    </svg> </div>
+                                <div class="max-sm:text-[12px]">72K</div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M4 4.5C4 3.12 5.119 2 6.5 2h11C18.881 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71V4.5zM6.5 4c-.276 0-.5.22-.5.5v14.56l6-4.29 6 4.29V4.5c0-.28-.224-.5-.5-.5h-11z">
+                                            </path>
+                                        </g>
+                                    </svg></div>
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z">
+                                            </path>
+                                        </g>
+                                    </svg></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="post cursor-pointer w-[100%] flex p-3 border-1 border-neutral-600  gap-1 hover:bg-neutral-900">
+                    <div class="left">
+                        <div class="img w-10 h-10 rounded-4xl overflow-hidden">
+                            <img class="object-cover"
+                                src="https://pbs.twimg.com/profile_images/1823254089783980032/hTWCEc37_400x400.jpg"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="right w-[100%] flex flex-col gap-2 px-2 text-neutral-300">
+                        <div class="top flex justify-between items-baseline">
+                            <div class="id_username">
+                                <div class="name flex gap-1">
+                                    <h2 class="flex hover:underline items-center">Rishab Singh </h2>
+                                    <p class="font-light text-neutral-600">@merishabh_singh<b class="font-bold"> .
+                                        </b><span> 16h </span></p>
+                                </div>
+                                <h2>I'm hashtag#hiring at multiple Internship roles for my client-company:</h2>
+                            </div>
+                            <div class="options flex gap-2">
+                                <img class="invert w-5" src="svgs/grok.svg" alt="">
+                                <img class="invert w-5" src="svgs/moreOptions.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="mid  mb-1">
+                            <h2>Roles:</h2>
+                            <h2>1&#41; Frontend Developer</h2>
+                            <h2>2&#41; Backend Developer </h2>
+                            <h2>3&#41; Business Analyst</h2>
+                            <h2>4&#41; Blockchain Intern</h2>
+                            <h2>5&#41; Cloud Intern</h2>
+                            <h2>6&#41; UI/UX Design Intern</h2>
+                            <h2 class="mb-4">7&#41; Marketing Intern</h2>
+
+                            <h2>Company: Yantrovaa Technologies</h2>
+                            <h2>Duration: 3 Months</h2>
+
+                        </div>
+                        <div class="foot flex justify-between items-center px-1">
+                            <div class="flex gap-1 items-center text-neutral-600 text-[15px]">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z">
+                                            </path>
+                                        </g>
+                                    </svg> </div>
+                                <div class="max-sm:text-[12px]">210</div>
+                            </div>
+                            <div class="flex gap-1 items-center text-neutral-600 text-[15px]">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z">
+                                            </path>
+                                        </g>
+                                    </svg></div>
+                                <div class="max-sm:text-[12px]">25</div>
+                            </div>
+                            <div class="flex gap-1 items-center text-neutral-600 text-[15px]">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z">
+                                            </path>
+                                        </g>
+                                    </svg></div>
+                                <div class="max-sm:text-[12px]">448</div>
+                            </div>
+                            <div class="flex gap-1 items-center text-neutral-600 text-[15px]">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z">
+                                            </path>
+                                        </g>
+                                    </svg> </div>
+                                <div class="max-sm:text-[12px]">41K</div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M4 4.5C4 3.12 5.119 2 6.5 2h11C18.881 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71V4.5zM6.5 4c-.276 0-.5.22-.5.5v14.56l6-4.29 6 4.29V4.5c0-.28-.224-.5-.5-.5h-11z">
+                                            </path>
+                                        </g>
+                                    </svg></div>
+                                <div class="w-5"><svg viewBox="0 0 24 24" class="fill-neutral-600" aria-hidden="true">
+                                        <g>
+                                            <path
+                                                d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z">
+                                            </path>
+                                        </g>
+                                    </svg></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="flex justify-between w-full px-6 py-2 border-t-1 border-white bg-black fixed bottom-0 z-10 sm:hidden">
+                    <img class="w-7 invert" src="svgs/home.svg" alt="">
+                    <img class="w-7 invert" src="svgs/search.svg" alt="">
+                    <img class="w-7 invert" src="svgs/grok.svg" alt="">
+                    <img class="w-7 invert" src="svgs/notification.svg" alt="">
+                    <img class="w-7 invert" src="svgs/message.svg" alt="">
+                    <img class="w-7 invert" src="svgs/communities.svg" alt="">
+                </div>
+
+
+            </div>
+
+            <!-- Right side of page -->
+            <div class="right p-1 pl-6 flex flex-col gap-5 w-90 max-lg:hidden sticky top-0">
+                <div class="search_box flex gap-2 border-1 border-neutral-700 p-2.5 rounded-4xl w-90">
+                    <img class="invert w-4 opacity-40" src="svgs/search.svg" alt="">
+                    <input class="placeholder:text-white font-light w-full" type="text" placeholder="Search">
+                </div>
+                <div class="subscrbe_text border-1 border-gray-600 rounded-2xl  p-4 pt-2 box-border w-90">
+                    <h2 class="font-bold text-2xl  mb-2">Subscribe to Premium</h2>
+                    <p class="mb-2">Subscribe to unlock new feature and if eligible, recive a share of revenue.</p>
+                    <button class="bg-blue-500 p-1.5 pl-4 pr-4 font-medium rounded-4xl mt-2">Subscribe</button>
+                </div>
+                <div class="current_news border-1 border-gray-600 rounded-2xl box-border w-90 pt-2 overflow-hidden">
+                    <h2 class="font-bold text-2xl px-4 mb-2">what's happning</h2>
+                    <div class="img_content flex gap-5 px-4 py-3 cursor-pointer hover:bg-neutral-950">
+                        <div class="img w-20 h-20 rounded-2xl overflow-hidden">
+                            <img class="object-cover object-center h-full"
+                                src="https://pbs.twimg.com/semantic_core_img/1775195893546856453/f6CELbJn?format=jpg&name=360x360"
+                                alt="">
+                        </div>
+                        <div class="text">
+                            <h2 class="font-bold mt-1">WWE Speed</h2>
+                            <p class="font-extralight text-gray-400">LIVE</p>
+                        </div>
+                    </div>
+                    <div class="news_card flex justify-between px-4 py-2 cursor-pointer hover:bg-neutral-950">
+                        <div class="txt">
+                            <p class="font-extralight text-gray-400 text-[14px]">Enternainment <b
+                                    class="font-normal">.</b> Trending</p>
+                            <h2>#Coolie</h2>
+                            <p class="font-extralight text-gray-400 text-[14px]">9,445 Posts</p>
+                        </div>
+                        <div class="opt">
+                            <img class="invert w-8 p-2 hover:bg-red-100 rounded-4xl" src="svgs/moreOptions.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="news_card flex justify-between px-4 py-2 cursor-pointer hover:bg-neutral-950">
+                        <div class="txt">
+                            <p class="font-extralight text-gray-400 text-[14px]">Trending in india</p>
+                            <h2>#Btpolls</h2>
+                        </div>
+                        <div class="opt mt-2">
+                            <img class="invert w-8 p-2 hover:bg-red-100 rounded-4xl" src="svgs/moreOptions.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="news_card flex justify-between px-4 py-2 cursor-pointer hover:bg-neutral-950">
+                        <div class="txt">
+                            <p class="font-extralight text-gray-400 text-[14px]">Trending in india</p>
+                            <h2>#MuruganManadu</h2>
+                            <p class="font-extralight text-gray-400 text-[14px]">54.5K Posts</p>
+                        </div>
+                        <div class="opt mt-2">
+                            <img class="invert w-8 p-2 hover:bg-red-100 rounded-4xl" src="svgs/moreOptions.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="news_card flex justify-between px-4 py-2 cursor-pointer hover:bg-neutral-950">
+                        <div class="txt">
+                            <p class="font-extralight text-gray-400 text-[14px]">Politics <b class="font-normal">.</b>
+                                Trending</p>
+                            <h2>#Khamenei</h2>
+                            <p class="font-extralight text-gray-400 text-[14px]">24.5K Posts</p>
+                        </div>
+                        <div class="opt mt-2">
+                            <img class="invert w-8 p-2 hover:bg-red-100 rounded-4xl" src="svgs/moreOptions.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="news_card flex justify-between px-4 py-2 cursor-pointer hover:bg-neutral-950">
+                        <p class="text-blue-500">Show More</p>
+                    </div>
+                </div>
+                <div
+                    class="suggetion_for_follow  border-1 border-gray-600 pt-2 rounded-2xl box-border w-90 overflow-hidden">
+
+                    <h2 class="px-5 py-2 text-2xl font-bold ">Who to follow</h2>
+
+                    <div
+                        class="profile py-2 px-5 hover:bg-neutral-950 cursor-pointer  flex justify-between items-center">
+                        <div class="left_part flex  items-center gap-2">
+
+                            <div class="img w-10">
+                                <img src="https://pbs.twimg.com/profile_images/1540324720708620288/zXLcAXEK_400x400.png"
+                                    alt="">
+                            </div>
+                            <div class="profileDetails">
+                                <h2 class="flex items-center py-0 font-bold ">Oracle <svg viewBox="0 0 22 22"
+                                        aria-hidden="true" class="w-5" data-testid="verificationBadge">
+                                        <g>
+                                            <linearGradient gradientUnits="userSpaceOnUse" id="29-a" x1="4.411"
+                                                x2="18.083" y1="2.495" y2="21.508">
+                                                <stop offset="0" stop-color="#f4e72a"></stop>
+                                                <stop offset=".539" stop-color="#cd8105"></stop>
+                                                <stop offset=".68" stop-color="#cb7b00"></stop>
+                                                <stop offset="1" stop-color="#f4ec26"></stop>
+                                                <stop offset="1" stop-color="#f4e72a"></stop>
+                                            </linearGradient>
+                                            <linearGradient gradientUnits="userSpaceOnUse" id="29-b" x1="5.355"
+                                                x2="16.361" y1="3.395" y2="19.133">
+                                                <stop offset="0" stop-color="#f9e87f"></stop>
+                                                <stop offset=".406" stop-color="#e2b719"></stop>
+                                                <stop offset=".989" stop-color="#e2b719"></stop>
+                                            </linearGradient>
+                                            <g clip-rule="evenodd" fill-rule="evenodd">
+                                                <path
+                                                    d="M13.324 3.848L11 1.6 8.676 3.848l-3.201-.453-.559 3.184L2.06 8.095 3.48 11l-1.42 2.904 2.856 1.516.559 3.184 3.201-.452L11 20.4l2.324-2.248 3.201.452.559-3.184 2.856-1.516L18.52 11l1.42-2.905-2.856-1.516-.559-3.184zm-7.09 7.575l3.428 3.428 5.683-6.206-1.347-1.247-4.4 4.795-2.072-2.072z"
+                                                    fill="url(#29-a)"></path>
+                                                <path
+                                                    d="M13.101 4.533L11 2.5 8.899 4.533l-2.895-.41-.505 2.88-2.583 1.37L4.2 11l-1.284 2.627 2.583 1.37.505 2.88 2.895-.41L11 19.5l2.101-2.033 2.895.41.505-2.88 2.583-1.37L17.8 11l1.284-2.627-2.583-1.37-.505-2.88zm-6.868 6.89l3.429 3.428 5.683-6.206-1.347-1.247-4.4 4.795-2.072-2.072z"
+                                                    fill="url(#29-b)"></path>
+                                                <path
+                                                    d="M6.233 11.423l3.429 3.428 5.65-6.17.038-.033-.005 1.398-5.683 6.206-3.429-3.429-.003-1.405.005.003z"
+                                                    fill="#d18800"></path>
+                                            </g>
+                                        </g>
+                                    </svg></h2>
+                                <p class="font-normal text-gray-400 ">@Oracle</p>
+                            </div>
+                        </div>
+                        <div class="follw_btn">
+                            <button class="bg-white text-black font-bold px-5 py-1.5 rounded-3xl ">Follow</button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="profile py-2 px-5 hover:bg-neutral-950 cursor-pointer  flex justify-between items-center">
+                        <div class="left_part flex  items-center gap-2">
+
+                            <div class="img w-10">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZYtHv2OLXmthRPbkmENZRXuqBVDwlsrZ1A&s"
+                                    alt="">
+                            </div>
+                            <div class="profileDetails">
+                                <h2 class="flex items-center py-0 font-bold ">Mongodb <svg viewBox="0 0 22 22"
+                                        aria-hidden="true" class="w-5" data-testid="verificationBadge">
+                                        <g>
+                                            <linearGradient gradientUnits="userSpaceOnUse" id="29-a" x1="4.411"
+                                                x2="18.083" y1="2.495" y2="21.508">
+                                                <stop offset="0" stop-color="#f4e72a"></stop>
+                                                <stop offset=".539" stop-color="#cd8105"></stop>
+                                                <stop offset=".68" stop-color="#cb7b00"></stop>
+                                                <stop offset="1" stop-color="#f4ec26"></stop>
+                                                <stop offset="1" stop-color="#f4e72a"></stop>
+                                            </linearGradient>
+                                            <linearGradient gradientUnits="userSpaceOnUse" id="29-b" x1="5.355"
+                                                x2="16.361" y1="3.395" y2="19.133">
+                                                <stop offset="0" stop-color="#f9e87f"></stop>
+                                                <stop offset=".406" stop-color="#e2b719"></stop>
+                                                <stop offset=".989" stop-color="#e2b719"></stop>
+                                            </linearGradient>
+                                            <g clip-rule="evenodd" fill-rule="evenodd">
+                                                <path
+                                                    d="M13.324 3.848L11 1.6 8.676 3.848l-3.201-.453-.559 3.184L2.06 8.095 3.48 11l-1.42 2.904 2.856 1.516.559 3.184 3.201-.452L11 20.4l2.324-2.248 3.201.452.559-3.184 2.856-1.516L18.52 11l1.42-2.905-2.856-1.516-.559-3.184zm-7.09 7.575l3.428 3.428 5.683-6.206-1.347-1.247-4.4 4.795-2.072-2.072z"
+                                                    fill="url(#29-a)"></path>
+                                                <path
+                                                    d="M13.101 4.533L11 2.5 8.899 4.533l-2.895-.41-.505 2.88-2.583 1.37L4.2 11l-1.284 2.627 2.583 1.37.505 2.88 2.895-.41L11 19.5l2.101-2.033 2.895.41.505-2.88 2.583-1.37L17.8 11l1.284-2.627-2.583-1.37-.505-2.88zm-6.868 6.89l3.429 3.428 5.683-6.206-1.347-1.247-4.4 4.795-2.072-2.072z"
+                                                    fill="url(#29-b)"></path>
+                                                <path
+                                                    d="M6.233 11.423l3.429 3.428 5.65-6.17.038-.033-.005 1.398-5.683 6.206-3.429-3.429-.003-1.405.005.003z"
+                                                    fill="#d18800"></path>
+                                            </g>
+                                        </g>
+                                    </svg></h2>
+                                <p class="font-normal text-gray-400 ">@Mongodb</p>
+                            </div>
+                        </div>
+                        <div class="follw_btn">
+                            <button class="bg-white text-black font-bold px-5 py-1.5 rounded-3xl ">Follow</button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="profile py-2 px-5 hover:bg-neutral-950 cursor-pointer  flex justify-between items-center">
+                        <div class="left_part flex  items-center gap-2">
+
+                            <div class="img w-10">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSDKn3vA2YUbXzN0ZC3gALWJ08gJN-Drl15w&s"
+                                    alt="">
+                            </div>
+                            <div class="profileDetails">
+                                <h2 class="flex items-center py-0 font-bold ">Tailwind <svg viewBox="0 0 22 22"
+                                        aria-hidden="true" class="w-5" data-testid="verificationBadge">
+                                        <g>
+                                            <linearGradient gradientUnits="userSpaceOnUse" id="29-a" x1="4.411"
+                                                x2="18.083" y1="2.495" y2="21.508">
+                                                <stop offset="0" stop-color="#f4e72a"></stop>
+                                                <stop offset=".539" stop-color="#cd8105"></stop>
+                                                <stop offset=".68" stop-color="#cb7b00"></stop>
+                                                <stop offset="1" stop-color="#f4ec26"></stop>
+                                                <stop offset="1" stop-color="#f4e72a"></stop>
+                                            </linearGradient>
+                                            <linearGradient gradientUnits="userSpaceOnUse" id="29-b" x1="5.355"
+                                                x2="16.361" y1="3.395" y2="19.133">
+                                                <stop offset="0" stop-color="#f9e87f"></stop>
+                                                <stop offset=".406" stop-color="#e2b719"></stop>
+                                                <stop offset=".989" stop-color="#e2b719"></stop>
+                                            </linearGradient>
+                                            <g clip-rule="evenodd" fill-rule="evenodd">
+                                                <path
+                                                    d="M13.324 3.848L11 1.6 8.676 3.848l-3.201-.453-.559 3.184L2.06 8.095 3.48 11l-1.42 2.904 2.856 1.516.559 3.184 3.201-.452L11 20.4l2.324-2.248 3.201.452.559-3.184 2.856-1.516L18.52 11l1.42-2.905-2.856-1.516-.559-3.184zm-7.09 7.575l3.428 3.428 5.683-6.206-1.347-1.247-4.4 4.795-2.072-2.072z"
+                                                    fill="url(#29-a)"></path>
+                                                <path
+                                                    d="M13.101 4.533L11 2.5 8.899 4.533l-2.895-.41-.505 2.88-2.583 1.37L4.2 11l-1.284 2.627 2.583 1.37.505 2.88 2.895-.41L11 19.5l2.101-2.033 2.895.41.505-2.88 2.583-1.37L17.8 11l1.284-2.627-2.583-1.37-.505-2.88zm-6.868 6.89l3.429 3.428 5.683-6.206-1.347-1.247-4.4 4.795-2.072-2.072z"
+                                                    fill="url(#29-b)"></path>
+                                                <path
+                                                    d="M6.233 11.423l3.429 3.428 5.65-6.17.038-.033-.005 1.398-5.683 6.206-3.429-3.429-.003-1.405.005.003z"
+                                                    fill="#d18800"></path>
+                                            </g>
+                                        </g>
+                                    </svg></h2>
+                                <p class="font-normal text-gray-400 ">@Tailwind</p>
+                            </div>
+                        </div>
+                        <div class="follw_btn">
+                            <button class="bg-white text-black font-bold px-5 py-1.5 rounded-3xl ">Follow</button>
+                        </div>
+                    </div>
+                    <div class="hover:bg-neutral-950 cursor-pointer">
+                        <p class="font-normal text-blue-600 px-5 py-2">Show More</p>
+                    </div>
+
+                </div>
+                <div class="licence w-90 flex flex-wrap gap-1">
+                    <a href="" class="text-gray-400  px-1 text-[13px]">Term of Services</a>
+                    <a href="" class="text-gray-400  px-1 text-[13px]">|</a>
+                    <a href="" class="text-gray-400  px-1 text-[13px]">Privacy Policy</a>
+                    <a href="" class="text-gray-400  px-1 text-[13px]">|</a>
+                    <a href="" class="text-gray-400  px-1 text-[13px]">Cookie Policy</a>
+                    <a href="" class="text-gray-400  px-1 text-[13px]">|</a>
+                    <a href="" class="text-gray-400  px-1 text-[13px]">Accessibility</a>
+                    <a href="" class="text-gray-400  px-1 text-[13px]">|</a>
+                    <a href="" class="text-gray-400  px-1 text-[13px]">Ads info</a>
+                    <a href="" class="text-gray-400  px-1 text-[13px]">|</a>
+                    <a href="" class="text-gray-400  px-1 text-[13px] flex  gap-1 items-center">More <img
+                            class="invert w-3" src="svgs/moreOptions.svg" alt=""></a>
+                    <a href="" class="text-gray-400  px-1 text-[13px]">&copy; 2025 X Corp.</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
