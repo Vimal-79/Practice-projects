@@ -26,7 +26,8 @@ function Manager() {
     }
 
     //handle save button
-    const handlesave = (e) => {
+    const handlesave = () => {
+        
         setForm([...form, { ...data, id: uuidv4() }]) //need to elabutate
         setData({
             website: "",
@@ -45,6 +46,11 @@ function Manager() {
         });
     }
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            handlesave();
+        }
+    };
 
 
     const handleInput = (e) => {
@@ -64,7 +70,7 @@ function Manager() {
         let newForm = form.filter(item => id != item.id)
         let tempusername = form.filter(item => id === item.id)
         confirm(`do you want to delete "${tempusername[0].username}" and its password`) && (setForm(newForm),
-            toast.warn('Password deleted!', {
+            toast.success('Password deleted!', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -93,7 +99,7 @@ function Manager() {
     }
 
     return (
-        <>
+        <main onKeyDown={ (data.password.length > 3 && data.username.length > 3) ? handleKeyDown : undefined}>
             <ToastContainer
                 position="top-right"
                 autoClose={2000}
@@ -127,30 +133,37 @@ function Manager() {
 
             </div>
             <div className="w-full overflow-auto px-8 flex flex-col items-center my-6">
-                <div className="flex w-full justify-between overflow-x-auto">
-                    <h1 className="capitalize font-bold sm:text-2xl flex self-start">Your password</h1>
-                    <button onClick={() => {
-                        confirm("Do you want to delete all passwords") && confirm("Are you sure about delete all the passwords") && (localStorage.setItem("password", ""),
-                            setForm({}),
-                            (toast.warn('All passwords are deleted', {
-                                position: "top-right",
-                                autoClose: 2000,
-                                hideProgressBar: false,
-                                closeOnClick: false,
-                                pauseOnHover: true,
-                                draggable: true,
-                                progress: undefined,
-                                theme: "colored",
-                            })))
-                    }} className={form.length > 0 ? "text-red-600 bg-white rounded-md px-3 h-fit" : "hidden"}>clear</button>
-                </div>
+
 
                 {form.length === 0 && <div>No password to show please add some</div>}
 
                 <table className="table-auto w-full mx-auto rounded-md overflow-hidden max-sm:text-[12px]">
                     {form.length > 0 &&
-                        <thead className="bg-green-800 text-white ">
-                            <tr className="  *:py-1 max-[500px]:*:font-normal">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <h1 className="capitalize font-bold sm:text-2xl flex self-start">Your password</h1>
+                                </th>
+                                <th></th>
+                                <th></th>
+                                <th>
+                                    <button onClick={() => {
+                                        confirm("Do you want to delete all saved passwords") && confirm("Are you sure about delete all saved passwords") && (localStorage.setItem("password", ''),
+                                            setForm([]),
+                                            (toast.success('All passwords are deleted', {
+                                                position: "top-right",
+                                                autoClose: 3000,
+                                                hideProgressBar: false,
+                                                closeOnClick: false,
+                                                pauseOnHover: true,
+                                                draggable: true,
+                                                progress: undefined,
+                                                theme: "colored",
+                                            })))
+                                    }} className={form.length > 0 ? "text-red-600 bg-white rounded-md px-3 h-fit hover:bg-red-500 hover:text-white transition-all" : "hidden"}>clear</button>
+                                </th>
+                            </tr>
+                            <tr className="  *:py-1 max-[500px]:*:font-normal bg-green-800 text-white">
                                 <th>Website</th>
                                 <th className="w-[120px] border-x border-white">Username</th>
                                 <th className="w-[120px] border-x border-white">Password</th>
@@ -164,9 +177,9 @@ function Manager() {
                             return (
                                 <tr key={item.id} className="*:py-1 border-t border-white">
                                     <td className="">
-                                        <div className="relative box-border pr-12 h-6 max-sm:h-4 overflow-y-hidden">
-                                            <a className="mx-6" href={item.website} target="_blank">{item.website.split("/").join(" ").split(" ")[item.website.split("/").join(" ").split(" ").length - (item.website.split("/").join(" ").split(" ").length - 2)]}</a>
-                                            <lord-icon onClick={(e) => { handlecopy(e, item.website) }} className="cursor-pointer w-6 max-sm:w-4 absolute right-3 bottom-1/2 translate-y-1/2 "
+                                        <div className="relative box-border pr-12 h-6 max-sm:h-4 overflow-y-hidden *:cursor-pointer">
+                                            <p onClick={()=>{window.open(item.website)}} className=" mx-5 max-w-[600px] overflow-auto no-scrollbar">{item.website}</p>
+                                            <lord-icon onClick={(e) => { handlecopy(e, item.website) }} className={item.website.length > 1 ? " w-6 max-sm:w-4 absolute right-3 bottom-1/2 translate-y-1/2 " : "hidden"}
                                                 src="https://cdn.lordicon.com/iykgtsbt.json"
                                                 trigger="hover" >
                                             </lord-icon>
@@ -176,7 +189,7 @@ function Manager() {
                                     <td className=" box-border border-x border-white relative ">
                                         <div className="flex justify-between items-center max-w-[120px] px-2 relative">
                                             <span className="overflow-auto no-scrollbar mr-6 text-nowrap">{item.username}</span>
-                                            <lord-icon onClick={(e) => { handlecopy(e, item.username) }} className="cursor-pointer w-6 max-sm:w-4  absolute right-0 bottom-1/2 translate-y-1/2"
+                                            <lord-icon onClick={(e) => { handlecopy(e, item.username) }} className={item.username.length>1 ? "cursor-pointer w-6 max-sm:w-4  absolute right-0 bottom-1/2 translate-y-1/2" : "hidden"}
                                                 src="https://cdn.lordicon.com/iykgtsbt.json"
                                                 trigger="hover" >
                                             </lord-icon>
@@ -186,7 +199,7 @@ function Manager() {
                                     <td className=" box-border border-x border-white relative ">
                                         <div className="flex justify-between items-center px-2 max-w-[120px] relative">
                                             <span className="overflow-auto no-scrollbar mr-6 text-nowrap">{item.password}</span>
-                                            <lord-icon onClick={(e) => { handlecopy(e, item.password) }} className="cursor-pointer w-6 max-sm:w-4  absolute right-0 bottom-1/2 translate-y-1/2 "
+                                            <lord-icon onClick={(e) => { handlecopy(e, item.password) }} className={item.password.length > 1 ? "cursor-pointer w-6 max-sm:w-4  absolute right-0 bottom-1/2 translate-y-1/2 " : "hidden"}
                                                 src="https://cdn.lordicon.com/iykgtsbt.json"
                                                 trigger="hover" >
                                             </lord-icon>
@@ -211,7 +224,7 @@ function Manager() {
                     </tbody>
                 </table>
             </div>
-        </>
+        </main>
     )
 }
 
