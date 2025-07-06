@@ -137,7 +137,7 @@ function Manager() {
 
                 {form.length === 0 && <div>No password to show please add some</div>}
 
-                <table className="table-auto w-full mx-auto rounded-md overflow-hidden max-sm:text-[12px]">
+                <table className="table-auto w-full mx-auto rounded-md overflow-hidden max-sm:text-[12px] mb-14">
                     {form.length > 0 &&
                         <thead>
                             <tr>
