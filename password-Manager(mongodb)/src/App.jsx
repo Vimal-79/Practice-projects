@@ -6,7 +6,7 @@ import Footer from "./components/Footer"
 function App() {
 
   return (
-    <main className="bg-gradient-to-r from-purple-50 to-purple-400">
+    <main className="bg-gradient-to-r from-purple-50 to-purple-400 min-h-[100vh]">
       <Navbar />
       <div className="flex flex-col items-center justify-center max-[500px]:my-4 my-8 max-[500px]:text-[10px]">
         <Hero />
