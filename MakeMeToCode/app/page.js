@@ -3,7 +3,6 @@ import React from 'react'
 import { useState } from 'react'
 
 function page() {
-
   return (
     <>
       <div className='text-white py-12'>
