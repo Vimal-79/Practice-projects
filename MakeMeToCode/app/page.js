@@ -7,7 +7,7 @@ function page() {
   return (
     <>
       <div className='text-white py-12'>
-        <h2 className='text-3xl font-bold text-center'>MakeMeCode</h2>
+        <h2 className='text-3xl font-bold text-center'>MakeMeToCode</h2>
         <p className='text-center text-lg mt-4'>A platform where you can raise funds for your coding projects and connect with like-minded individuals.</p>
         <p className='text-center text-lg mt-4'>Join us today and start bringing your coding ideas to life!</p>
         <div className='flex justify-center mt-8 gap-3 *:border *:border-gray-300/20 *:rounded-md *:py-2 *:px-4 *:cursor-pointer  '>
@@ -38,16 +38,9 @@ function page() {
 
       <div className='my-3 flex flex-col items-center justify-center *:text-white space-y-3'>
         <h3 className='text-2xl text-white font-semibold text-center'>Learn More</h3>
-        {/* <ul className='list-disc space-y-4'>
-          <li>At Make Me Code, we raise funds for programmers in recognition of their dedication, so they can continue building more awesome programs.</li>
-          <li>We believe that when developers are supported, they can focus on creating innovative and meaningful technology.</li>
-          <li>By funding passionate coders, we help turn ideas into impactful tools, apps, and platforms that benefit everyone.</li>
-          <li>Join us in empowering the people behind the code — because great programs start with great support.</li>
-        </ul> */}
-
         <dl className='mt-4'>
           <dt className='font-semibold text-lg'>Empowering Coders, One Line at a Time</dt>
-          <dd className='mb-4'>MakeMeCode is a platform dedicated to supporting aspiring and underfunded programmers through community-backed fundraising.</dd>
+          <dd className='mb-4'>MakeMeToCode is a platform dedicated to supporting aspiring and underfunded programmers through community-backed fundraising.</dd>
 
           <dt className='font-semibold text-lg'>Why We Exist</dt>
           <dd className='mb-4'>Thousands of talented coders lack access to essential tools, mentorship, or education. We’re here to bridge that gap by connecting donors with developers who need a lift.</dd>
@@ -59,7 +52,7 @@ function page() {
           <dd className='mb-4'>Every donation is tracked, every story is shared. We ensure your support makes a visible difference in the coding community.</dd>
 
           <dt className='font-semibold text-lg'>Join the Movement</dt>
-          <dd className='mb-4'>Whether you're a programmer in need or someone who believes in the power of code to change lives, MakeMeCode is your platform to make an impact.</dd>
+          <dd className='mb-4'>Whether you're a programmer in need or someone who believes in the power of code to change lives, MakeMeToCode is your platform to make an impact.</dd>
         </dl>
       </div>
 
