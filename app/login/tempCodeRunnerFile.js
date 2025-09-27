@@ -1,0 +1,1 @@
+<span className='text-gray-400'>Don't have an account? <Link href="/signup" className='text-[#8129d9] text-[14px] '>Sign up</Link></span>

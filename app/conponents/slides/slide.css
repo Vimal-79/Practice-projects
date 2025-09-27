@@ -1,0 +1,43 @@
+
+
+#slider img {
+    object-fit: cover;
+    height: 300px;
+}
+
+#img_1{
+    animation: leftAnimation 30s linear 0s infinite ;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+#img_2{
+    animation: leftAnimation 30s linear 3.3s infinite ;
+}
+#img_3{
+    animation: leftAnimation 30s linear 8.2s infinite ;
+}
+#img_4{
+    animation: leftAnimation 30s linear 11.5s infinite ;
+}
+#img_5{
+    animation: leftAnimation 30s linear 16.4s infinite ;
+}
+#img_6{
+    animation: leftAnimation 30s linear 20.1s infinite ;
+}
+#img_7{
+    animation: leftAnimation 30s linear 23.4s infinite ;
+}
+#img_8{
+    animation: leftAnimation 30s linear 26.68s infinite ;
+}
+
+
+@keyframes leftAnimation {
+    from {
+        left: 100vw;
+    }
+
+    to {
+        left: -100vw;
+    }
+}
