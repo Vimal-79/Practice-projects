@@ -7,7 +7,7 @@ function page() {
   return (
     <>
       <div className='text-white py-12'>
-        <h2 className='text-3xl font-bold text-center'>MakeMeCode</h2>
+        <h2 className='text-3xl font-bold text-center'>MakeMeToCode</h2>
         <p className='text-center text-lg mt-4'>A platform where you can raise funds for your coding projects and connect with like-minded individuals.</p>
         <p className='text-center text-lg mt-4'>Join us today and start bringing your coding ideas to life!</p>
         <div className='flex justify-center mt-8 gap-3 *:border *:border-gray-300/20 *:rounded-md *:py-2 *:px-4 *:cursor-pointer  '>
