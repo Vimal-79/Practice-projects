@@ -23,7 +23,8 @@ npm run dev
 ### - [Vimal-79](https://github.com/vimal-79)
 
 <!-- 
-In still learning and i have to learn a lot please let me know how can i make myself better i'm improving every day 
+I'm learning everyday and i have to learn a lot please let me know how much do you like it or how can i make myself better.
+I'm improving every day 
 i'm doing my best 
 Thankyou for downloading or opening my reposetory 
 -[vimal] 
