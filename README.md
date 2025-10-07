@@ -20,6 +20,7 @@ npm run dev
 * To use any login provider you may need to create a env.local file with secrate keys
 
 ### Thankyou
+### - [Vimal-79](https://github.com/vimal-79)
 
 <!-- 
 In still learning and i have to learn a lot please let me know how can i make myself better i'm improving every day 
