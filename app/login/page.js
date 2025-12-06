@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 // import { redirect } from 'next/dist/server/api-utils'
 
 
-function page() {
+function Page() {
     const { data: session, status } = useSession()
     const router = useRouter();
 
@@ -15,7 +15,7 @@ function page() {
         if (status === 'authenticated') {
             router.replace("/dashboard")
         }
-    }, [session])
+    }, [session, status, router])
 
     if (status === 'loading') {
         return (
@@ -77,4 +77,4 @@ function page() {
     }
 }
 
-export default page
+export default Page

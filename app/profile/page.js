@@ -5,7 +5,7 @@ import { userProfileDB } from '@/actions/UserData'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
-function page() {
+function Page() {
   const router = useRouter()
   const { data: session, status } = useSession();
   const [username, setUsername] = useState();
@@ -13,16 +13,15 @@ function page() {
   const [coverImage, setCoverImage] = useState();
   // const [description, setDescription] = useState();
 
-  const getUserDetails = async () => {
-    if (session) {
-      const a = await userProfileDB(session.user.email)
-      setUsername(a.username)
-      setProfileImage(a.profileImage)
-      setCoverImage(a.coverImage)
-    }
-  }
-
   useEffect(() => {
+    const getUserDetails = async () => {
+      if (session) {
+        const a = await userProfileDB(session.user.email)
+        setUsername(a.username)
+        setProfileImage(a.profileImage)
+        setCoverImage(a.coverImage)
+      }
+    }
     
     if (status === 'authenticated') {
       getUserDetails()
@@ -32,7 +31,7 @@ function page() {
       router.replace("/")
     }
 
-  }, [session])
+  }, [session, status, router])
 
   if (status === 'loading') {
     return (
@@ -87,4 +86,4 @@ function page() {
 
 }
 
-export default page
+export default Page

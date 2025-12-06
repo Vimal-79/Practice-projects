@@ -19,7 +19,7 @@ function page() {
       <div className='border-2 border-gray-300/10 my-12'></div>
 
       <div className="*:cursor-pointer flex justify-around py-5">
-        {<script src="https://cdn.lordicon.com/lordicon.js"></script>}
+        {<script async src="https://cdn.lordicon.com/lordicon.js"></script>}
         <div className='flex flex-col gap-2 justify-center items-center'>
           <div className='p-3 w-fit bg-white flex justify-center items-center rounded-full'><lord-icon className="bg-white w-15 h-15 rounded-full object-contain" src="https://cdn.lordicon.com/hhljfoaj.json" delay="1000" trigger="loop"></lord-icon></div>
           <p className='text-white'>Fund yourself</p>
@@ -59,7 +59,7 @@ function page() {
           <dd className='mb-4'>Every donation is tracked, every story is shared. We ensure your support makes a visible difference in the coding community.</dd>
 
           <dt className='font-semibold text-lg'>Join the Movement</dt>
-          <dd className='mb-4'>Whether you're a programmer in need or someone who believes in the power of code to change lives, MakeMeCode is your platform to make an impact.</dd>
+          <dd className='mb-4'>Whether you&apos;re a programmer in need or someone who believes in the power of code to change lives, MakeMeCode is your platform to make an impact.</dd>
         </dl>
       </div>
 

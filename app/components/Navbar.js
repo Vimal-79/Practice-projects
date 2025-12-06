@@ -17,18 +17,17 @@ function Navbar() {
         setShowDropdown(false)
     }
 
-    const fetchUserProfile = async () => {
-        const profile = await userProfileDB(session?.user?.email)
-        setUserEmail(profile.email)
-    }
-
     useEffect(() => {
+        const fetchUserProfile = async () => {
+            const profile = await userProfileDB(session?.user?.email)
+            setUserEmail(profile.email)
+        }
         
         if (status === 'authenticated') {
             fetchUserProfile()
         }
 
-    }, [session])
+    }, [session, status])
 
     return (
         <nav className='text-white px-8 flex justify-between items-center py-2 bg-blue-950 border-b border-gray-600'>

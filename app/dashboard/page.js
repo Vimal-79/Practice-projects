@@ -6,7 +6,7 @@ import { userProfileDB } from '@/actions/UserData'
 import { useRouter } from 'next/navigation'
 import POST from '@/actions/UserActions'
 
-function page() {
+function Page() {
   const { data: session, status } = useSession();
   // const [username , setUsername] = useState();
   // const [name , setName] = useState();
@@ -20,19 +20,19 @@ function page() {
   const [coverPreview, setCoverPreview] = useState(null);
 
 
-  const fetcData = async () => {
-    if (session?.user?.email) {
-      await userProfileDB(session.user.email).then((a) => {
-        if (!refname.current.value) refname.current.value = a.name
-        if (!refusername.current.value) refusername.current.value = a.username
-        if (!refemail.current.value) refemail.current.value = a.email
-        if (!profilePreview) setProfilePreview(a.profileImage)
-        if (!coverPreview) setCoverPreview(a.coverImage)
-      })
-    }
-  }
-
   useEffect(() => {
+    const fetcData = async () => {
+      if (session?.user?.email) {
+        await userProfileDB(session.user.email).then((a) => {
+          if (!refname.current.value) refname.current.value = a.name
+          if (!refusername.current.value) refusername.current.value = a.username
+          if (!refemail.current.value) refemail.current.value = a.email
+          if (!profilePreview) setProfilePreview(a.profileImage)
+          if (!coverPreview) setCoverPreview(a.coverImage)
+        })
+      }
+    }
+
     //redirect to loading page when no sesionm found
     if (status === 'unauthenticated') {
       router.replace("/login")
@@ -41,7 +41,7 @@ function page() {
     if (status === 'authenticated') {
       fetcData()
     }
-  }, [session])
+  }, [session, status, router])
 
   const redirectToProfile = () => {
     router.push("/profile")
@@ -177,5 +177,5 @@ function page() {
   return null
 }
 
-export default page
+export default Page
 

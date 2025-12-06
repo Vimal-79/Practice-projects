@@ -1,30 +1,26 @@
-
+"use client"
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter, useParams } from 'next/navigation'
 import { usernameData } from '@/actions/UserData'
 
-const username = () => {
+const Username = () => {
     const { data: session, status } = useSession();
     const router = useRouter();
     const params = useParams();
 
-    const redirectToLogin = () => {
-        console.log("No session found, redirecting to login");
-        router.replace("/login");
-    }
-
-    const usernmaedatadb = async () => {
-        await usernameData()
-    }
-
     useEffect(() => {
+        const redirectToLogin = () => {
+            console.log("No session found, redirecting to login");
+            router.replace("/login");
+        }
+
         if (status === 'unauthenticated') {
             redirectToLogin();
         }
 
-    }, [status])
+    }, [status, router])
 
     if (status === 'unauthenticated') {
         return (
@@ -78,7 +74,7 @@ const username = () => {
                                 <img className='object-cover ' src="./default_profile_image.jpg" alt="" />
                             </div>
                             <div>
-                                <p>Donated $30 with message <span className='text-green-300'>"Keep working and stay where you are many people can't be there where you are right now"</span> ❤️</p>
+                                <p>Donated $30 with message <span className='text-green-300'>&quot;Keep working and stay where you are many people can&apos;t be there where you are right now&quot;</span> ❤️</p>
                             </div>
                         </div>
 
@@ -104,4 +100,4 @@ const username = () => {
     }
 }
 
-export default username
+export default Username
