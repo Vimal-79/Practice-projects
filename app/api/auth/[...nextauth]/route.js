@@ -34,28 +34,37 @@ export const authOptions = {
     ], callbacks: {
         async signIn({ user, account, profile, email, credentials }) {
             // console.log(user, account, profile, email, credentials)
-            if (account.provider === 'github') {
-                await connectDB();
-                const currentUser = await User.findOne({ email: user.email })
-                if (!currentUser) {
-                    const newUser = await User.create({
-                        name: profile.name,
-                        email: user.email,
-                        username: profile.login,
-                        profile: {"name": profile.name, "username": profile.login , "email": user.email , "profileImage": '' , "coverImage": ''}
-                    })
-                    await newUser.save()
+            if (account && account.provider === 'github') {
+                try {
+                    await connectDB();
+                    const currentUser = await User.findOne({ email: user.email });
+                    if (!currentUser) {
+                        const newUser = await User.create({
+                            name: profile?.name || user?.name || '',
+                            email: user.email,
+                            username: profile?.login || user?.email.split('@')[0],
+                            profile: { name: profile?.name || '', username: profile?.login || '', email: user.email, profileImage: '', coverImage: '' }
+                        });
+                        await newUser.save();
+                    }
+                } catch (err) {
+                    console.error('NextAuth signIn error (GitHub provider):', err);
+                    // Return false to indicate sign-in failure without crashing the function
+                    return false;
                 }
             }
-            return true
+            return true;
         },
         async session({ session, token, user }) {
             // console.log("session", session, "\ntoken", token, "\nuser", user)
-            const dbUser = await User.findOne({email: session.user.email})
-            session.user.name = dbUser.name
-            // console.log(dbUser)
-
-            return session
+            try {
+                const dbUser = await User.findOne({ email: session.user?.email });
+                if (dbUser && dbUser.name) session.user.name = dbUser.name;
+            } catch (err) {
+                console.error('NextAuth session callback error:', err);
+                // leave session as-is if DB lookup fails
+            }
+            return session;
         }
     }
 }
