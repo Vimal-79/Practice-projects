@@ -21,7 +21,14 @@ export const authOptions = {
         }),
         TwitterProvider({
             clientId: process.env.TWITTER_CLIENT_ID,
-            clientSecret: process.env.TWITTER_CLIENT_SECRET
+            clientSecret: process.env.TWITTER_CLIENT_SECRET,
+            // Use OAuth 2.0 (X / Twitter API v2) and request common read scopes
+            version: "2.0",
+            authorization: {
+                params: {
+                    scope: "tweet.read users.read offline.access"
+                }
+            }
         }),
         GithubProvider({
             clientId: process.env.GITHUB_ID,
@@ -35,6 +42,7 @@ export const authOptions = {
         async signIn({ user, account, profile, email, credentials }) {
             // console.log(user, account, profile, email, credentials)
             if (account && account.provider === 'github') {
+                console.log("GitHub sign-in detected");
                 try {
                     await connectDB();
                     const currentUser = await User.findOne({ email: user.email });
@@ -50,6 +58,44 @@ export const authOptions = {
                 } catch (err) {
                     console.error('NextAuth signIn error (GitHub provider):', err);
                     // Return false to indicate sign-in failure without crashing the function
+                    return false;
+                }
+            }
+
+            // Handle Twitter (X) provider sign-in (OAuth 2.0 / v2)
+            if (account && account.provider === 'twitter') {
+                // console.log("Twitter sign-in detected");
+                try {
+                    await connectDB();
+
+                    // Twitter profile shapes vary; support multiple possible fields
+                    const twitterUsername = profile?.data?.username || profile?.username || profile?.screen_name;
+                    const twitterName = profile?.data?.name || profile?.name || user?.name;
+
+                    // Try to find user by email if available, otherwise by username
+                    let currentUser = null;
+                    if (user?.email) {
+                        currentUser = await User.findOne({ email: user.email });
+                    }
+                    if (!currentUser && twitterUsername) {
+                        currentUser = await User.findOne({ username: twitterUsername });
+                    }
+
+                    if (!currentUser) {
+                        // Build fallback username and email when provider doesn't supply email
+                        const username = twitterUsername || (user?.email ? user.email.split('@')[0] : (twitterName || 'twitteruser').replace(/\s+/g, ''));
+                        const email = user?.email || `${username}@twitter.local`;
+
+                        const newUser = await User.create({
+                            name: twitterName || '',
+                            email,
+                            username,
+                            profile: { name: twitterName || '', username: twitterUsername || '', email, profileImage: '', coverImage: '' }
+                        });
+                        await newUser.save();
+                    }
+                } catch (err) {
+                    console.error('NextAuth signIn error (Twitter provider):', err);
                     return false;
                 }
             }
