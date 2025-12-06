@@ -9,7 +9,7 @@ import connectDB from "@/db/connectDB";
 import { User } from "@/models/user";
 // import { Collection, createConnection } from "mongoose";
 
-export const authOptions = NextAuth({
+export const authOptions = {
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
@@ -58,7 +58,7 @@ export const authOptions = NextAuth({
             return session
         }
     }
-})
+}
 
-
-export { authOptions as GET, authOptions as POST }
+const handler = NextAuth(authOptions)
+export { handler as GET, handler as POST }
