@@ -65,6 +65,10 @@ export const authOptions = {
             // Handle Twitter (X) provider sign-in (OAuth 2.0 / v2)
             if (account && account.provider === 'twitter') {
                 console.log("Twitter sign-in detected");
+                console.log("Profile data:", profile);
+                console.log("User data:", user);
+                console.log("Account data:", account);
+                console.log("Email data:", email);
                 try {
                     await connectDB();
 
