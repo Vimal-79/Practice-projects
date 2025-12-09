@@ -44,13 +44,13 @@ function Page() {
                             </svg>
                             Sign in with Google
                         </button>
-                        <button type="button" className="text-black w-58 bg-white hover:bg-white/90 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
+                        <button type="button" onClick={() => { signIn("facebook") }} className="text-black w-58 bg-white hover:bg-white/90 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
                             <svg xmlnsXlink="http://www.w3.org/2000/svg" fill="#3b5998" width="30" height="30" viewBox="0 0 50 50">
                                 <path d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z"></path>
                             </svg>
                             Sign in with Facebook
                         </button>
-                        <button type="button" onClick={() =>{ signIn("twitter")}} className="text-black w-58 bg-white hover:bg-white/90 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
+                        <button type="button" onClick={() => { signIn("twitter") }} className="text-black w-58 bg-white hover:bg-white/90 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
                             <svg xmlnsXlink="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
                                 <path d="M26.37,26l-8.795-12.822l0.015,0.012L25.52,4h-2.65l-6.46,7.48L11.28,4H4.33l8.211,11.971L12.54,15.97L3.88,26h2.65 l7.182-8.322L19.42,26H26.37z M10.23,6l12.34,18h-2.1L8.12,6H10.23z"></path>
                             </svg>

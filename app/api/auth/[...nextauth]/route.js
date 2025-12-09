@@ -103,6 +103,44 @@ export const authOptions = {
                     return false;
                 }
             }
+
+            // Handle Facebook provider sign-in
+            if (account && account.provider === 'facebook') {
+                console.log("Facebook sign-in detected");
+                try {
+                    await connectDB();
+
+                    // Facebook profile shape
+                    const facebookName = profile?.name || user?.name || '';
+                    const facebookUsername = profile?.id || user?.email?.split('@')[0] || 'fbuser';
+
+                    // Try to find user by email if available
+                    let currentUser = null;
+                    if (user?.email) {
+                        currentUser = await User.findOne({ email: user.email });
+                    }
+
+                    if (!currentUser) {
+                        const newUser = await User.create({
+                            name: facebookName || '',
+                            email: user.email || `${facebookUsername}@facebook.local`,
+                            username: facebookUsername || 'fbuser',
+                            profile: { 
+                                name: facebookName || '', 
+                                username: facebookUsername || '', 
+                                email: user.email || `${facebookUsername}@facebook.local`, 
+                                profileImage: profile?.picture?.data?.url || '', 
+                                coverImage: '' 
+                            }
+                        });
+                        await newUser.save();
+                    }
+                } catch (err) {
+                    console.error('NextAuth signIn error (Facebook provider):', err);
+                    return false;
+                }
+            }
+
             return true;
         },
         async session({ session, token, user }) {
